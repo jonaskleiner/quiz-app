@@ -1,0 +1,63 @@
+/* Text Styling */
+
+h1 {
+	font-family: 'Boogaloo', cursive;
+	font-size: 4.75em;
+	letter-spacing: -1px;
+	margin: 50px 0 0 0;
+
+}
+
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 3em;
+	letter-spacing: -1px;
+	margin: 0px;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.33em;
+	letter-spacing: -1px;
+}
+
+/* BTNS */
+
+/* Block */
+.butt {
+	text-decoration: none;
+	color: #fff;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 10px 15px;
+	font-family: 'Boogaloo', cursive;
+	font-size: 2.75em;
+	letter-spacing: 1px;
+}
+
+/* Modifier */
+.butt-orange {
+  border-color: #f26d40;
+  color: fff;
+  background-color: #f26d40;
+}
+
+
+
+/* Layout Styles */
+
+.title, .image, .lrgText, .smText {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#wrapper {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#contentBox {
+	padding: 0 70px;
+}
