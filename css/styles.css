@@ -48,7 +48,7 @@ p {
 
 /* Layout Styles */
 
-.title, .image, .lrgText, .smText {
+.introTitle, .introImage, .introText, .introDescriptionText {
 	text-align: center;
 	margin: 0 auto;
 }
@@ -60,4 +60,11 @@ p {
 
 #contentBox {
 	padding: 0 70px;
+}
+
+/* show hide elements */
+
+#question1, #question2, #question3, #question4, #question5, #title1, #title2, #title3, #title4, #title5, #quizImage1,
+#quizImage2, #quizImage3, #quizImage4, #quizImage5 {
+	display: none;
 }
