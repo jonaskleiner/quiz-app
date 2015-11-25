@@ -7,42 +7,66 @@
 	<link href='https://fonts.googleapis.com/css?family=Boogaloo|Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<!-- JavaScript -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" href="js/app.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 
 </head>
 <body>
 <div id="wrapper">
-	<div class="introTitle"><h1>Design 101 Quiz</h1></div>
-	<div id="title1"><h1>Question 1</h1></div>
-	<div id="title2"><h1>Question 2</h1></div>
-	<div id="title3"><h1>Question 3</h1></div>
-	<div id="title4"><h1>Question 4</h1></div>
-	<div id="title5"><h1>Question 5</h1></div>
-
-	<div class="introImage">
-		<img src="img/design-board.png" width="375px" height="375px" alt="design quiz board">
-	</div>
-	<div id="quizImage1"></div>
-	<div id="quizImage2"></div>
-	<div id="quizImage3"></div>
-	<div id="quizImage4"></div>
-	<div id="quizImage5"></div>
-
-	<div class="introText"><h2>Instructions</h2></div>
-	<div id="question1"><h2>Which colors are considered Primary colors?</h2></div>
-	<div id="question2"><h2>In Adobe Photoshop, what is the primary purpose of the marquee tool?</h2></div>
-	<div id="question3"><h2>What is the appropriate color mode for a print ready file?</h2></div>
-	<div id="question4"><h2>The main advantage of the vector file format is...</h2></div>
-	<div id="question5"><h2>What is the minimum recommended resolution for outputting a color image to print?</h2></div>
-
+	<section id="intro">
+		<h1>Design 101 Quiz</h1>
+		<div class="quizImage"><img src="img/design-board.png" width="375px" height="375px" alt="design quiz board"></div>
+		<h2>Instructions</h2>
+		<p>You are a budding designer, perhaps even a design genius! Please embark on our multiple choice quiz. Read each question and choose the best possible answer.</p>
+		<button type="button" class="butt butt-orange">Let's Begin!</button>
+	</section>
 	
-	<div id="contentBox">
-		<div class="introDescriptionText">
-			<p>You are a budding designer, perhaps even a design genius! Please embark on our multiple choice quiz. Read each question and choose the best possible answer.</p>
-			<div class="butt butt-orange">Let's Begin!</div>
-		</div>
+	<section hidden id="question1">
+		<h1>Question 1</h1>
+		<div class="quizImage"><img src="http://placehold.it/375x375"></div>
+		<h2>Which colors are considered Primary colors?</h2>
 
-	</div>
+		<button type="button" class="butt butt-orange">Submit</button>
+	</section>
+	
+	<section hidden id="question2">
+		<h1>Question 2</h1>
+		<div class="quizImage"><img src="http://placehold.it/375x375"></div>
+		<h2>In Adobe Photoshop, what is the primary purpose of the marquee tool?</h2>
+
+		<button type="button" class="butt butt-orange">Submit</button>
+	</section>
+	
+	<section hidden id="question3">
+		<h1>Question 3</h1>
+		<div class="quizImage"><img src="http://placehold.it/375x375"></div>
+		<h2>What is the appropriate color mode for a print ready file?</h2>
+
+		<button type="button" class="butt butt-orange">Submit</button>
+	</section>
+	
+	<section hidden id="question4">
+		<h1>Question 4</h1>
+		<div class="quizImage"><img src="http://placehold.it/375x375"></div>
+		<h2>The main advantage of the vector file format is...</h2>
+
+		<button type="button" class="butt butt-orange">Submit</button>
+	</section>
+	
+	<section hidden id="question5">
+		<h1>Question 5</h1>
+		<div class="quizImage"><img src="http://placehold.it/375x375"></div>
+		<h2>What is the minimum recommended resolution for outputting a color image to print?</h2>
+
+		<button type="button" class="butt butt-orange">Submit</button>
+	</section>
+	
+	<section hidden id="tally">
+		<h1>Tally</h1>
+		<div class="quizImage"><img src="http://placehold.it/375x375"></div>
+
+		<button type="button" class="butt butt-orange">Play Again</button>
+	</section>
+
 </div> <!-- close wrapper -->
 
 </body>
