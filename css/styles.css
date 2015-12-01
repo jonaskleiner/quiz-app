@@ -53,6 +53,28 @@ form {
 .checked {
 	float: right;
 }
+
+.tally-icons {
+	float: right;
+}
+
+.tally {
+	background-color: #ccc;
+	border: 5px solid #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.15em;
+	letter-spacing: -1px;
+	margin: 5px;
+	text-align: left;
+	text-decoration: line-through;
+}
+
+.tally-result {
+	background-color: #4fc4d0;
+	border:0;
+	text-decoration: none;
+}
 /* button */
 
 button:focus {outline:0;}
