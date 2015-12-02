@@ -1,7 +1,19 @@
 function createQuestionHTML (questionData) {
 	console.log("createQuestionHTML", questionData);
 	return '<h1>Question ' + questionData.number + ' of 5</h1>' +
-	 	   '<div class="quizImage"><img src="img/' + questionData.img.src + '" width="375" height="375" alt="marquee tool"></div>';
+	 	   '<div class="quizImage"><img src="img/' + questionData.img.src + '" width="375" height="375" alt="' + questionData.img.alt + '"></div>' +
+	 	   '<h2>' + questionData.prompt + '</h2>' +
+	 	   '<div class="answers-wrap">' +
+	 	   '<ul>' +
+	 	   '<li class="answers">Modify Colors <span class="radio-position"><input type="radio" name="marquee-tool" value="Modify"></span></li>' +
+	 	   '<li class="answers">Edit Type <span class="radio-position"><input type="radio" name="marquee-tool" value="Edit"></span></li>' +
+	 	   '<li class="answers">Select Pixels <span class="radio-position"><input type="radio" name="marquee-tool" value="Select"></span></li>' +
+	 	   '<li class="answers">Flatten Layers <span class="radio-position"><input type="radio" name="marquee-tool" value="Flatten"></span></li>' +
+	 	   '<li class="answers">Create a Border <span class="radio-position"><input type="radio" name="marquee-tool" value="Create"></span></li>' +
+	 	   '</ul>' +
+	 	   '</div>' +
+	 	   '<button type="button" class="butt butt-orange">Continue</button>';
+
 }
 
 $(document).ready(function () {
@@ -37,21 +49,22 @@ $(document).ready(function () {
 
 // give radio buttons a name so they are grouped together
 
- /* <section hidden id="question2">
-		<h1>Question 2 of 5</h1>
-		<div class="quizImage"><img src="img/marquee-tool.png" width="375px" height="375px" alt="marquee tool"></div>
-		<h2>In Adobe Photoshop, what is the primary purpose of the marquee tool?</h2>
-		<div class="answers-wrap">
-			<ul>
-				<li class="answers">Modify Colors <span class="check-box"><input type="checkbox"></span></li>
-				<li class="answers">Edit Type <span class="check-box"><input type="checkbox"></span></li>
-				<li class="answers">Select Pixels <span class="check-box"><input type="checkbox"></span></li>
-				<li class="answers">Flatten Layers <span class="check-box"><input type="checkbox"></span></li>
-				<li class="answers">Create a Border <span class="check-box"><input type="checkbox"></span></li>
-			</ul>
-		</div>
-		<button type="button" class="butt butt-orange">Continue</button>
-	</section> */
+	// <section hidden id="question2">
+	// 	<h1>Question 2 of 5</h1>
+	// 	<div class="quizImage"><img src="img/marquee-tool.png" width="375px" height="375px" alt="marquee tool"></div>
+	// 	<h2>In Adobe Photoshop, what is the primary purpose of the marquee tool?</h2>
+	// 	<div class="answers-wrap">
+	// 		<ul>
+	// 			<li class="answers">Modify Colors <span class="radio-position"><input type="radio" name="marquee-tool" value="Modify"></span></li>
+	// 			<li class="answers">Edit Type <span class="radio-position"><input type="radio" name="marquee-tool" value="Edit"></span></li>
+	// 			<li class="answers">Select Pixels <span class="radio-position"><input type="radio" name="marquee-tool" value="Select"></span></li>
+	// 			<li class="answers">Flatten Layers <span class="radio-position"><input type="radio" name="marquee-tool" value="Flatten"></span></li>
+	// 			<li class="answers">Create a Border <span class="radio-position"><input type="radio" name="marquee-tool" value="Create"></span></li>
+	// 		</ul>
+	// 	</div>
+	// 	<button type="button" class="butt butt-orange">Continue</button>
+	// </section>
+
 
 // denote correct answers
 // tally score
