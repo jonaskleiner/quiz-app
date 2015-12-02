@@ -85,13 +85,13 @@ $(document).ready(function () {
 		question5: {
 			number: 5,
 			img: {
-				src: 
-				alt:
+				src: "resolution.png",
+				alt: "resolution",
 			}, // close img object
-			prompt:
-			answer: ["", "", "", "", ""],
-			correctAnswer:
-			name:
+			prompt: "What is the minimum recommended resolution for outputting a color image to print?",
+			answer: ["72 dpi", "96 dpi", "150 dpi", "300 dpi", "600 dpi"],
+			correctAnswer: "300 dpi",
+			name: "resolution",
 			value: ["", "", "", "", ""],
 		}, // close question5 object 
 	}; // close questions object
@@ -100,8 +100,6 @@ $(document).ready(function () {
 	$('#question2').html(createQuestionHTML (questions.question2));
 
 }); // close 'jQuery activate' function
-
-// give radio buttons a name so they are grouped together
 
 
 // denote correct answers
@@ -112,7 +110,6 @@ $(document).ready(function () {
 // Compare the user answer, and the correct answer to determine a score When all the questions are answered 
 // display the user score. 
 // Allow the user to start a new game. 
-// Use JavaScript objects to represent the questions. 
 // Hint: You may want to store the question objects in an array
 
 
