@@ -19,10 +19,17 @@ function createQuestionHTML (questionData) {
 	 	   '</div>' +
 	 	   '<button type="button" class="butt butt-orange">Continue</button>';
 
-}
+};
 
 $(document).ready(function () {
-	$("button").on("click", function () {
+	// $("button").on("click", function () {
+	// 	console.log("click");
+	// 	var section = $(this).closest("section");
+	// 	section.prop("hidden", true);
+	// 	section.next().prop("hidden", false);
+	// });
+
+	$(document).on("click", "button", function () {
 		console.log("click");
 		var section = $(this).closest("section");
 		section.prop("hidden", true);
@@ -62,7 +69,7 @@ $(document).ready(function () {
 				src: "print-colors.png",
 				alt: "print color mode",
 			}, // close img object
-			prompt: "What is the appropriate color mode for a print ready color file?"
+			prompt: "What is the appropriate color mode for a print ready color file?",
 			answer: ["RGB", "Index Color", "Greyscale", "CMYK", "Duotone"],
 			correctAnswer: "CMYK",
 			name: "print-color",
@@ -92,14 +99,17 @@ $(document).ready(function () {
 			answer: ["72 dpi", "96 dpi", "150 dpi", "300 dpi", "600 dpi"],
 			correctAnswer: "300 dpi",
 			name: "resolution",
-			value: ["", "", "", "", ""],
+			value: ["72", "96", "150", "300", "600"],
 		}, // close question5 object 
 	}; // close questions object
 	
 	$('#question1').html(createQuestionHTML (questions.question1));
 	$('#question2').html(createQuestionHTML (questions.question2));
+	$('#question3').html(createQuestionHTML (questions.question3));
+	$('#question4').html(createQuestionHTML (questions.question4));
+	$('#question5').html(createQuestionHTML (questions.question5));
 
-}); // close 'jQuery activate' function
+}); // close 'jQuery activate' function aka 'ready' function
 
 
 // denote correct answers
