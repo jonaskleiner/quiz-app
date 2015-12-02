@@ -35,7 +35,7 @@ $(document).ready(function () {
 			img: {
 				src: "primary-colors.png",
 				alt: "primary colors",
-			},
+			}, // close img object
 			prompt: "Which colors are considered Primary colors?",
 			answer: ["Cyan Magenta Yellow Black", "Blue Yellow Red", "Orange Black Purple Red", "Red Yellow Green", "Red Green Blue"],
 			correctAnswer: "Red, Green, Blue",
@@ -48,7 +48,7 @@ $(document).ready(function () {
 			img: {
 				src: "marquee-tool.png",
 				alt: "marquee tool",
-			},
+			}, // close img object
 			prompt: "In Adobe Photoshop, what is the primary purpose of the marquee tool?",
 			answer: ["Modify Colors", "Edit Type", "Select Pixels", "Flatten Layers", "Create a Border"],
 			correctAnswer: "Select Pixels",
@@ -56,10 +56,45 @@ $(document).ready(function () {
 			value: ["Modify", "Edit", "Select", "Flatten", "Create"],
 		}, // close question2 object
 
-		question3: {}, // close question3 object
-		question4: {}, // close question4 object
-		question5: {}, // close question5 object 
-	};
+		question3: {
+			number: 3,
+			img: {
+				src: "print-colors.png",
+				alt: "print color mode",
+			}, // close img object
+			prompt: "What is the appropriate color mode for a print ready color file?"
+			answer: ["RGB", "Index Color", "Greyscale", "CMYK", "Duotone"],
+			correctAnswer: "CMYK",
+			name: "print-color",
+			value: ["RGB", "Index", "Greyscale", "CMYK", "Duotone"],
+		}, // close question3 object
+		
+		question4: {
+			number: 4,
+			img: {
+				src: "vector.png",
+				alt: "vector images",
+			}, // close img object
+			prompt: "The main advantage of the vector file format is?",
+			answer: ["Infinite scaling", "Crisp image printing", "Small file size vs raster", "Transform doesn't degrade image", "All of the above"],
+			correctAnswer: "All of the above",
+			name: "vector",
+			value: ["Infinite", "Crisp", "Small", "Transform", "All"],
+		}, // close question4 object
+		
+		question5: {
+			number: 5,
+			img: {
+				src: 
+				alt:
+			}, // close img object
+			prompt:
+			answer: ["", "", "", "", ""],
+			correctAnswer:
+			name:
+			value: ["", "", "", "", ""],
+		}, // close question5 object 
+	}; // close questions object
 	
 	$('#question1').html(createQuestionHTML (questions.question1));
 	$('#question2').html(createQuestionHTML (questions.question2));
@@ -67,41 +102,6 @@ $(document).ready(function () {
 }); // close 'jQuery activate' function
 
 // give radio buttons a name so they are grouped together
-
-
-	// <section hidden id="question1">
-	// 	<h1>Question 1 of 5</h1>
-	// 	<div class="quizImage"><img src="img/primary-colors.png" width="375px" height="375px" alt="primary colors"></div>
-	// 	<form id="ques1">
-	// 		<h2>Which colors are considered Primary colors?</h2>
-	// 		<div class="answers-wrap">
-	// 			<ul>
-	// 				<li class="answers">Cyan, Magenta, Yellow, Black <span class="radio-position"><input type="radio" name="primary-colors" value="CMYK"></span></li>
-	// 				<li class="answers">Blue, Yellow, Red<span class="radio-position"><input type="radio" name="primary-colors" value="BYR"></span></li>
-	// 				<li class="answers">Orange, Black, Purple, Red<span class="radio-position"><input type="radio" name="primary-colors" value="OBPR"></span></li>
-	// 				<li class="answers">Red, Yellow, Green<span class="radio-position"><input type="radio" name="primary-colors" value="RYG"></span></li>
-	// 				<li class="answers">Red, Green, Blue<span class="radio-position"><input type="radio" name="primary-colors" value="RGB"></span></li>
-	// 			</ul>
-	// 		</div>
-	// 	</form>
-	// 	<button type="button" class="butt butt-orange">Continue</button>
-	// </section>
-
-	// <section hidden id="question2">
-	// 	<h1>Question 2 of 5</h1>
-	// 	<div class="quizImage"><img src="img/marquee-tool.png" width="375px" height="375px" alt="marquee tool"></div>
-	// 	<h2>In Adobe Photoshop, what is the primary purpose of the marquee tool?</h2>
-	// 	<div class="answers-wrap">
-	// 		<ul>
-	// 			<li class="answers">Modify Colors <span class="radio-position"><input type="radio" name="marquee-tool" value="Modify"></span></li>
-	// 			<li class="answers">Edit Type <span class="radio-position"><input type="radio" name="marquee-tool" value="Edit"></span></li>
-	// 			<li class="answers">Select Pixels <span class="radio-position"><input type="radio" name="marquee-tool" value="Select"></span></li>
-	// 			<li class="answers">Flatten Layers <span class="radio-position"><input type="radio" name="marquee-tool" value="Flatten"></span></li>
-	// 			<li class="answers">Create a Border <span class="radio-position"><input type="radio" name="marquee-tool" value="Create"></span></li>
-	// 		</ul>
-	// 	</div>
-	// 	<button type="button" class="butt butt-orange">Continue</button>
-	// </section>
 
 
 // denote correct answers
