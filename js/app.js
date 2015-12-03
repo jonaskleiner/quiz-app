@@ -13,23 +13,56 @@ function createQuestionHTML (questionData) {
 	 	   '<li class="answers">' + questionData.answer[4] + '<span class="radio-position"><input type="radio" name="' + questionData.name + '" value="' + questionData.value[4] + '"></span></li>' +
 	 	   '</ul>' +
 	 	   '</div>' +
-	 	   '<button type="button" class="butt butt-orange">Continue</button>';
+	 	   '<button type="button" class="butt butt-orange" name="proceed">Continue</button>';
 
 };
 
-$(document).ready(function () {
 
+
+$(document).ready(function () {
+	var userCorrectAnswerCount;
+
+	// button function
 	$(document).on("click", "button", function () {
 		var section = $(this).closest("section");
-		section.prop("hidden", true);
-		section.next().prop("hidden", false);
+		section.prop("hidden", true); // hides previous section
+		section.next().prop("hidden", false); // displays next section
+		console.log("button clicked on: ", section);
+		console.log("now viewing section: ", section.next());
+		
+		takeQuiz();
 
-		if (section.is("name","#reset") === "") {
-			// button refreshes game at "#tally"
-		};
-	});
+	}); // end of button function
+
+	// game function
+	function takeQuiz() {
+		console.log(section);
+
+		if ( $(this).attr('name') === 'begin') {
+			console.log("start the game now");
+			userCorrectAnswerCount = 0;
+			console.log(userCorrectAnswerCount);
+		}
+
+		// increment userCorrectAnswerCount to keep track of score
+		else if ( $("input:checked").val() === questionData.correctAnswer ) {
+			userCorrectAnswerCount ++;
+			console.log(userCorrectAnswerCount);
+		}
+
+		// reset game
+		else if ( $(this).attr('name') === 'reset') {
+			console.log("reset the game now");
+			// create code which "resets" quiz
+		}
+
+		else {
+			console.log(userCorrectAnswerCount);
+		}
+
+	};
 	
-	var questions = {
+	var questions = { // data for questions and multiple choice answers
 		question1: {
 			number: 1,
 			img: {
@@ -115,7 +148,6 @@ $(document).ready(function () {
 // Compare the user answer, and the correct answer to determine a score When all the questions are answered 
 // display the user score. 
 // Allow the user to start a new game. 
-// Hint: You may want to store the question objects in an array
 
 
 
