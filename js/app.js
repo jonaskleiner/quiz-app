@@ -1,7 +1,3 @@
-// when button is clicked, user's answer recorded
-// when button is clicked, user moves to next section
-
-
 function createQuestionHTML (questionData) {
 	console.log("createQuestionHTML", questionData);
 	console.log("value of first item in the array named answer is: ", questionData.answer[0]);
@@ -22,20 +18,17 @@ function createQuestionHTML (questionData) {
 };
 
 $(document).ready(function () {
-	// $("button").on("click", function () {
-	// 	console.log("click");
-	// 	var section = $(this).closest("section");
-	// 	section.prop("hidden", true);
-	// 	section.next().prop("hidden", false);
-	// });
 
 	$(document).on("click", "button", function () {
-		console.log("click");
 		var section = $(this).closest("section");
 		section.prop("hidden", true);
 		section.next().prop("hidden", false);
-	});
 
+		if (section.is("name","#reset") === "") {
+			// button refreshes game at "#tally"
+		};
+	});
+	
 	var questions = {
 		question1: {
 			number: 1,
@@ -111,6 +104,8 @@ $(document).ready(function () {
 
 }); // close 'jQuery activate' function aka 'ready' function
 
+
+// when button is clicked, user's answer recorded
 
 // denote correct answers
 // tally score
