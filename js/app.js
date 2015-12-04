@@ -29,13 +29,14 @@ $(document).ready(function () {
 		section.next().prop("hidden", false); // displays next section
 		console.log("button clicked on: ", section);
 		console.log("now viewing section: ", section.next());
-		
-		takeQuiz();
+		console.log(section.next(), " passing into takeQuiz function.");
+		takeQuiz(section.next);
 
 	}); // end of button function
 
 	// game function
-	function takeQuiz() {
+	function takeQuiz(val) {
+		var section = val;
 		console.log(section);
 
 		if ( $(this).attr('name') === 'begin') {
@@ -71,7 +72,7 @@ $(document).ready(function () {
 			}, // close img object
 			prompt: "Which colors are considered Primary colors?",
 			answer: ["Cyan Magenta Yellow Black", "Blue Yellow Red", "Orange Black Purple Red", "Red Yellow Green", "Red Green Blue"],
-			correctAnswer: "Red, Green, Blue",
+			correctAnswer: "Red Green Blue",
 			name: "primary-colors",
 			value: ["CMYK", "BYR", "OBPR", "RYG", "RGB"],
 		}, // close question1 object
