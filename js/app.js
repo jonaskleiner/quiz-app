@@ -15,53 +15,14 @@ function createQuestionHTML (questionData) {
 	 	   '</div>' +
 	 	   '<button type="button" class="butt butt-orange" name="proceed">Continue</button>';
 
-};
-
+}
 
 
 $(document).ready(function () {
+
+	// global vars
 	var userCorrectAnswerCount;
 
-	// button function
-	$(document).on("click", "button", function () {
-		var section = $(this).closest("section");
-		section.prop("hidden", true); // hides previous section
-		section.next().prop("hidden", false); // displays next section
-		console.log("button clicked on: ", section);
-		console.log("now viewing section: ", section.next());
-		console.log(section.next(), " passing into takeQuiz function.");
-		takeQuiz(section.next);
-
-	}); // end of button function
-
-	// game function
-	function takeQuiz(val) {
-		var section = val;
-		console.log(section);
-
-		if ( $(this).attr('name') === 'begin') {
-			console.log("start the game now");
-			userCorrectAnswerCount = 0;
-			console.log(userCorrectAnswerCount);
-		}
-
-		// increment userCorrectAnswerCount to keep track of score
-		else if ( $("input:checked").val() === questionData.correctAnswer ) {
-			userCorrectAnswerCount ++;
-			console.log(userCorrectAnswerCount);
-		}
-
-		// reset game
-		else if ( $(this).attr('name') === 'reset') {
-			console.log("reset the game now");
-			// create code which "resets" quiz
-		}
-
-		else {
-			console.log(userCorrectAnswerCount);
-		}
-
-	};
 	
 	var questions = { // data for questions and multiple choice answers
 		question1: {
@@ -72,7 +33,7 @@ $(document).ready(function () {
 			}, // close img object
 			prompt: "Which colors are considered Primary colors?",
 			answer: ["Cyan Magenta Yellow Black", "Blue Yellow Red", "Orange Black Purple Red", "Red Yellow Green", "Red Green Blue"],
-			correctAnswer: "Red Green Blue",
+			correctAnswer: "RGB",
 			name: "primary-colors",
 			value: ["CMYK", "BYR", "OBPR", "RYG", "RGB"],
 		}, // close question1 object
@@ -85,7 +46,7 @@ $(document).ready(function () {
 			}, // close img object
 			prompt: "In Adobe Photoshop, what is the primary purpose of the marquee tool?",
 			answer: ["Modify Colors", "Edit Type", "Select Pixels", "Flatten Layers", "Create a Border"],
-			correctAnswer: "Select Pixels",
+			correctAnswer: "Select",
 			name: "marquee-tool",
 			value: ["Modify", "Edit", "Select", "Flatten", "Create"],
 		}, // close question2 object
@@ -111,7 +72,7 @@ $(document).ready(function () {
 			}, // close img object
 			prompt: "The main advantage of the vector file format is?",
 			answer: ["Infinite scaling", "Crisp image printing", "Small file size vs raster", "Transform doesn't degrade image", "All of the above"],
-			correctAnswer: "All of the above",
+			correctAnswer: "All",
 			name: "vector",
 			value: ["Infinite", "Crisp", "Small", "Transform", "All"],
 		}, // close question4 object
@@ -124,11 +85,53 @@ $(document).ready(function () {
 			}, // close img object
 			prompt: "What is the minimum recommended resolution for outputting a color image to print?",
 			answer: ["72 dpi", "96 dpi", "150 dpi", "300 dpi", "600 dpi"],
-			correctAnswer: "300 dpi",
+			correctAnswer: "300",
 			name: "resolution",
 			value: ["72", "96", "150", "300", "600"],
 		}, // close question5 object 
 	}; // close questions object
+
+	// button function
+	$(document).on("click", "button", function () {
+		var button = $(this);
+		var section = button.closest("section");
+		console.log(section.next(), " passing into tallyScore function.");
+		
+		if ( button.attr('name') === 'begin') {
+			console.log("start the game now");
+			userCorrectAnswerCount = 0;
+			console.log(userCorrectAnswerCount);
+		
+		} else if ( button.attr('name') === 'reset') {
+			console.log("reset the game now");
+			// create code which "resets" quiz
+		
+		} else {
+			tallyScore(section, questions[ section.attr( 'id' ) ].correctAnswer);
+
+		}
+
+		section.prop("hidden", true); // hides previous section
+		section.next().prop("hidden", false); // displays next section
+		console.log("button clicked on: ", section);
+		console.log("now viewing section: ", section.next());
+
+	}); // end of button function
+
+	function tallyScore(section, correctAnswer) {
+		console.log(section, correctAnswer);
+		console.log(section.find("input:checked").val(), section.find("input:checked"));
+
+		// increment userCorrectAnswerCount to keep track of score
+	 	if ( section.find("input:checked").val() === correctAnswer ) {
+			userCorrectAnswerCount ++;
+			console.log(userCorrectAnswerCount);
+		}
+
+		else {
+			console.log(userCorrectAnswerCount);
+		}
+	}
 	
 	$('#question1').html(createQuestionHTML (questions.question1));
 	$('#question2').html(createQuestionHTML (questions.question2));
@@ -139,16 +142,28 @@ $(document).ready(function () {
 }); // close 'jQuery activate' function aka 'ready' function
 
 
-// when button is clicked, user's answer recorded
+// WORKING PARTS //
+// -------- Questions & Answers loaded onto screen
+// -------- Button click moves user from question to question
 
-// denote correct answers
-// tally score
-// display score
-// user to answer questions, one at a time 
-// Prevent user from skipping questions 
-// Compare the user answer, and the correct answer to determine a score When all the questions are answered 
-// display the user score. 
-// Allow the user to start a new game. 
+// NEXT STEPS //
+// -------- when button is pressed:
+// ---------- I need to check that user has submitted answer
+// ---------- If no, user needs to be prompted to make a selection
+// ---------- If yes, need to record answer
+// ---------- If yes, need to check if answer is correct
+// ---------- If yes, need to increment userCorrectAnswerCount
+
+// -------- When all 5 questions answered:
+// ---------- user needs to get to tally screen
+// ---------- need to show user their score
+// ---------- need to display their ranking based on score
+
+// -------- When button pressed on tally screen:
+// ---------- Game needs to 'reset' and start a new game
+
+// ERROR DEBUGGING //
+// -------- Why does console show 'Uncaught ReferenceError: questionData is not defined'
 
 
 
