@@ -98,13 +98,16 @@ $(document).ready(function () {
 		console.log(section.next(), " passing into tallyScore function.");
 		
 		if ( button.attr('name') === 'begin') {
-			console.log("start the game now");
+			console.log("beginning the game now");
 			userCorrectAnswerCount = 0;
-			console.log(userCorrectAnswerCount);
+			console.log("user's score is ", userCorrectAnswerCount);
 		
 		} else if ( button.attr('name') === 'reset') {
-			console.log("reset the game now");
+			console.log("resetting the game now");
 			// create code which "resets" quiz
+			userCorrectAnswerCount = 0;
+			console.log("user's score is ", userCorrectAnswerCount);
+			section.prop("hidden", true); // hides previous section
 		
 		} else {
 			tallyScore(section, questions[ section.attr( 'id' ) ].correctAnswer);
@@ -125,11 +128,11 @@ $(document).ready(function () {
 		// increment userCorrectAnswerCount to keep track of score
 	 	if ( section.find("input:checked").val() === correctAnswer ) {
 			userCorrectAnswerCount ++;
-			console.log(userCorrectAnswerCount);
+			console.log("correct answer, point added to score. total is: ", userCorrectAnswerCount);
 		}
 
 		else {
-			console.log(userCorrectAnswerCount);
+			console.log("incorrect answer. user's score is still: ", userCorrectAnswerCount);
 		}
 	}
 	
