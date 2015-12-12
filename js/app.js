@@ -145,29 +145,30 @@ $(document).ready(function () {
 }); // close 'jQuery activate' function aka 'ready' function
 
 
-// WORKING PARTS //
-// -------- Questions & Answers loaded onto screen
-// -------- Button click moves user from question to question
+/*
 
-// NEXT STEPS //
-// -------- when button is pressed:
-// ---------- I need to check that user has submitted answer
-// ---------- If no, user needs to be prompted to make a selection
-// ---------- If yes, need to record answer
-// ---------- If yes, need to check if answer is correct
-// ---------- If yes, need to increment userCorrectAnswerCount
-
-// -------- When all 5 questions answered:
-// ---------- user needs to get to tally screen
-// ---------- need to show user their score
-// ---------- need to display their ranking based on score
-
-// -------- When button pressed on tally screen:
-// ---------- Game needs to 'reset' and start a new game
-
-// ERROR DEBUGGING //
-// -------- Why does console show 'Uncaught ReferenceError: questionData is not defined'
+WORKING PARTS
+--- Questions & Answers loaded onto screen
+--- Button click moves user from question to question
+--- Button click answer checked. If true then score incremented +1
 
 
+NEXT STEPS
+
+CHECK IF USER HAS ANSWERED
+--- when button is pressed:
+--- need to check that user has submitted answer
+--- If no, user needs to be prompted to make a selection
+
+
+TALLY FUNCTION
+--- need to show user their score
+--- need to display their ranking based on score
+
+RESET FUNCTION
+--- When button pressed on tally screen:
+--- Game needs to 'reset' and start a new game
+
+*/
 
 
