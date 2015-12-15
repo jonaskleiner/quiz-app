@@ -91,6 +91,7 @@ $(document).ready(function () {
 		}, // close question5 object 
 	}; // close questions object
 
+
 	// button function
 	$(document).on("click", "button", function () {
 		var button = $(this);
@@ -144,12 +145,28 @@ $(document).ready(function () {
 			console.log("incorrect answer. user's score is still: ", userCorrectAnswerCount);
 		}
 	}
+
+	function finalGameTally (answerData) {
+		return 	'<h1>Time To Tally Up Your Answers!</h1>' +
+				'<div class="quizImage"><img src="img/tally.png" width="375px" height="375px" alt="tally"></div>' +
+				'<h2>You got ' + userCorrectAnswerCount + ' answers out of 5 correct.</h2>' +
+				'<div class="answers-wrap">' +
+				'<ul>' +
+				'<li class="tally tally-result">' + answerData.result + '<span class="tally-icons"><i class="fa fa-trophy"></i></span></li>' +
+				'</ul>' +
+		 	   '</div>' +
+		 	   '<type="button" class="butt butt-orange" name="reset">Play Again</button>';
+
+	}
 	
 	$('#question1').html(createQuestionHTML (questions.question1));
 	$('#question2').html(createQuestionHTML (questions.question2));
 	$('#question3').html(createQuestionHTML (questions.question3));
 	$('#question4').html(createQuestionHTML (questions.question4));
 	$('#question5').html(createQuestionHTML (questions.question5));
+	$('#finalTally').html(finalGameTally);
+
+
 
 }); // close 'jQuery activate' function aka 'ready' function
 
@@ -166,9 +183,10 @@ WORKING PARTS OF GAME SO FAR
 NEXT STEPS
 
 
-TALLY FUNCTION
---- need to show user their score
+FINAL TALLY FUNCTION
+--- need to show user their score "you got _ of 5 correct"
 --- need to display their ranking based on score
+--- need to dynamically populate the items on the finalTally screen
 
 RESET FUNCTION
 --- When button pressed on tally screen:
