@@ -1,6 +1,6 @@
 function createQuestionHTML (questionData) {
-	console.log("createQuestionHTML", questionData);
-	console.log("value of first item in the array named answer is: ", questionData.answer[0]);
+	// console.log("createQuestionHTML", questionData);
+	// console.log("value of first item in the array named answer is: ", questionData.answer[0]);
 	return '<h1>Question ' + questionData.number + ' of 5</h1>' +
 	 	   '<div class="quizImage"><img src="img/' + questionData.img.src + '" width="375" height="375" alt="' + questionData.img.alt + '"></div>' +
 	 	   '<h2>' + questionData.prompt + '</h2>' +
@@ -95,12 +95,16 @@ $(document).ready(function () {
 	$(document).on("click", "button", function () {
 		var button = $(this);
 		var section = button.closest("section");
-		console.log(section.next(), " passing into tallyScore function.");
+		// console.log(section.next(), " passing into tallyScore function.");
 		
 		if ( button.attr('name') === 'begin') {
 			console.log("beginning the game now");
 			userCorrectAnswerCount = 0;
 			console.log("user's score is ", userCorrectAnswerCount);
+			section.prop("hidden", true); // hides previous section
+			section.next().prop("hidden", false); // displays next section
+			console.log("button clicked on: ", section);
+			console.log("now viewing section: ", section.next());
 		
 		} else if ( button.attr('name') === 'reset') {
 			console.log("resetting the game now");
@@ -109,15 +113,20 @@ $(document).ready(function () {
 			console.log("user's score is ", userCorrectAnswerCount);
 			section.prop("hidden", true); // hides previous section
 		
+		} else if (section.find("input:checked").val() === undefined) {
+			console.log("user needs to submit an answer");
+			section.find('h2').append('<br /><span class = "red">Please select an answer to continue</span>');
+		
 		} else {
 			tallyScore(section, questions[ section.attr( 'id' ) ].correctAnswer);
+			section.prop("hidden", true); // hides previous section
+			section.next().prop("hidden", false); // displays next section
+			console.log("button clicked on: ", section);
+			console.log("now viewing section: ", section.next());
 
 		}
 
-		section.prop("hidden", true); // hides previous section
-		section.next().prop("hidden", false); // displays next section
-		console.log("button clicked on: ", section);
-		console.log("now viewing section: ", section.next());
+		
 
 	}); // end of button function
 
@@ -147,18 +156,14 @@ $(document).ready(function () {
 
 /*
 
-WORKING PARTS
+WORKING PARTS OF GAME SO FAR
 --- Questions & Answers loaded onto screen
 --- Button click moves user from question to question
 --- Button click answer checked. If true then score incremented +1
+--- Button click with no answer selected prompts user to answer
 
 
 NEXT STEPS
-
-CHECK IF USER HAS ANSWERED
---- when button is pressed:
---- need to check that user has submitted answer
---- If no, user needs to be prompted to make a selection
 
 
 TALLY FUNCTION

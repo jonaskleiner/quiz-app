@@ -17,6 +17,13 @@ h2 {
 	padding: 20px 0;
 }
 
+.red {
+	background-color: red;
+	padding-right: 1em;
+	padding-left: 1em;
+	margin-top: 1.8em;
+}
+
 p {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
