@@ -120,6 +120,7 @@ $(document).ready(function () {
 		
 		} else {
 			tallyScore(section, questions[ section.attr( 'id' ) ].correctAnswer);
+			$('#finalTally').html(finalGameTally);
 			section.prop("hidden", true); // hides previous section
 			section.next().prop("hidden", false); // displays next section
 			console.log("button clicked on: ", section);
@@ -129,8 +130,10 @@ $(document).ready(function () {
 
 		
 
-	}); // end of button function
+	}); // close button function
 
+
+ 		// tally score function 
 	function tallyScore(section, correctAnswer) {
 		console.log(section, correctAnswer);
 		console.log(section.find("input:checked").val(), section.find("input:checked"));
@@ -144,31 +147,29 @@ $(document).ready(function () {
 		else {
 			console.log("incorrect answer. user's score is still: ", userCorrectAnswerCount);
 		}
-	}
-
-	function finalGameTally (answerData) {
-		return 	'<h1>Time To Tally Up Your Answers!</h1>' +
-				'<div class="quizImage"><img src="img/tally.png" width="375px" height="375px" alt="tally"></div>' +
-				'<h2>You got ' + userCorrectAnswerCount + ' answers out of 5 correct.</h2>' +
-				'<div class="answers-wrap">' +
-				'<ul>' +
-				'<li class="tally tally-result">' + answerData.result + '<span class="tally-icons"><i class="fa fa-trophy"></i></span></li>' +
-				'</ul>' +
-		 	   '</div>' +
-		 	   '<type="button" class="butt butt-orange" name="reset">Play Again</button>';
-
-	}
+	} // close function
 	
 	$('#question1').html(createQuestionHTML (questions.question1));
 	$('#question2').html(createQuestionHTML (questions.question2));
 	$('#question3').html(createQuestionHTML (questions.question3));
 	$('#question4').html(createQuestionHTML (questions.question4));
 	$('#question5').html(createQuestionHTML (questions.question5));
-	$('#finalTally').html(finalGameTally);
 
+	function finalGameTally () {
+		console.log("In function finalGameTally, user score is: ", userCorrectAnswerCount);
+		return 	'<h1>Time To Tally Up Your Answers!</h1>' +
+				'<div class="quizImage"><img src="img/tally.png" width="375px" height="375px" alt="tally"></div>' +
+				'<h2>You got ' + userCorrectAnswerCount + ' answers out of 5 correct.</h2>' +
+				'<div class="answers-wrap">' +
+				'<ul>' +
+				'<li class="tally tally-result">' + 'test' + '<span class="tally-icons"><i class="fa fa-trophy"></i></span></li>' +
+				'</ul>' +
+		 	   '</div>' +
+		 	   '<type="button" class="butt butt-orange" name="reset">Play Again</button>';
 
+	}
 
-}); // close 'jQuery activate' function aka 'ready' function
+}); // close 'ready' function
 
 
 /*
