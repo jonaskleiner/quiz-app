@@ -156,16 +156,17 @@ $(document).ready(function () {
 	$('#question5').html(createQuestionHTML (questions.question5));
 
 	function finalGameTally () {
-		console.log("In function finalGameTally, user score is: ", userCorrectAnswerCount);
+		var awards = ["Design Dreamer", "Future Designer", "Design Intern", "Up and Coming Designer", "Design Brainiac", "Design Genius"];
+
 		return 	'<h1>Time To Tally Up Your Answers!</h1>' +
 				'<div class="quizImage"><img src="img/tally.png" width="375px" height="375px" alt="tally"></div>' +
-				'<h2>You got ' + userCorrectAnswerCount + ' answers out of 5 correct.</h2>' +
 				'<div class="answers-wrap">' +
 				'<ul>' +
-				'<li class="tally tally-result">' + 'test' + '<span class="tally-icons"><i class="fa fa-trophy"></i></span></li>' +
+				'<li class="tally tally-result">' + awards[userCorrectAnswerCount] + '<span class="tally-icons"><i class="fa fa-trophy"></i></span></li>' +
 				'</ul>' +
-		 	   '</div>' +
-		 	   '<type="button" class="butt butt-orange" name="reset">Play Again</button>';
+		 	    '</div>' +
+		 	    '<h2>You got ' + userCorrectAnswerCount + ' out of 5 correct!</h2>' +
+		 	    '<type="button" class="butt butt-orange" name="reset">Play Again</button>';
 
 	}
 
@@ -179,15 +180,12 @@ WORKING PARTS OF GAME SO FAR
 --- Button click moves user from question to question
 --- Button click answer checked. If true then score incremented +1
 --- Button click with no answer selected prompts user to answer
+--- Running total answers correct is kept throughout game
+--- Final Tally section displays total correct of 5
+--- Final Tally section displays award level
 
 
 NEXT STEPS
-
-
-FINAL TALLY FUNCTION
---- need to show user their score "you got _ of 5 correct"
---- need to display their ranking based on score
---- need to dynamically populate the items on the finalTally screen
 
 RESET FUNCTION
 --- When button pressed on tally screen:
