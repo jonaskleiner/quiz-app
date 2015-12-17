@@ -170,7 +170,7 @@ $(document).ready(function () {
 
 	function resetQuiz () {
 		userCorrectAnswerCount = 0;
-		console.log('game has been reset and the users new score is: ', userCorrectAnswerCount);
+		// console.log('game has been reset and the users new score is: ', userCorrectAnswerCount);
 		$('#question1').html(createQuestionHTML (questions.question1));
 		$('#question2').html(createQuestionHTML (questions.question2));
 		$('#question3').html(createQuestionHTML (questions.question3));
@@ -179,26 +179,5 @@ $(document).ready(function () {
 	}
 
 }); // close 'document.ready' function
-
-
-/*
-
-WORKING PARTS OF GAME SO FAR
---- Questions & Answers loaded onto screen
---- Button click moves user from question to question
---- Button click answer checked. If true then score incremented +1
---- Button click with no answer selected prompts user to answer
---- Running total answers correct is kept throughout game
---- Final Tally section displays total correct of 5
---- Final Tally section displays award level
-
-
-NEXT STEPS
-
-RESET FUNCTION
---- When button pressed on tally screen:
---- Game needs to 'reset' and start a new game
-
-*/
 
 
