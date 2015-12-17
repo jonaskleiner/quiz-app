@@ -171,11 +171,14 @@ $(document).ready(function () {
 	function resetQuiz () {
 		userCorrectAnswerCount = 0;
 		console.log('game has been reset and the users new score is: ', userCorrectAnswerCount);
-		// $.each('.answers').prop('checked', false);
-		
+		$('#question1').html(createQuestionHTML (questions.question1));
+		$('#question2').html(createQuestionHTML (questions.question2));
+		$('#question3').html(createQuestionHTML (questions.question3));
+		$('#question4').html(createQuestionHTML (questions.question4));
+		$('#question5').html(createQuestionHTML (questions.question5));
 	}
 
-}); // close 'ready' function
+}); // close 'document.ready' function
 
 
 /*
