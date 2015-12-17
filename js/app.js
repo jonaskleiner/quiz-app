@@ -96,7 +96,6 @@ $(document).ready(function () {
 	$(document).on("click", "button", function () {
 		var button = $(this);
 		var section = button.closest("section");
-		// console.log(section.next(), " passing into tallyScore function.");
 		
 		if ( button.attr('name') === 'begin') {
 			console.log("beginning the game now");
@@ -109,10 +108,10 @@ $(document).ready(function () {
 		
 		} else if ( button.attr('name') === 'reset') {
 			console.log("resetting the game now");
-			// create code which "resets" quiz
-			userCorrectAnswerCount = 0;
-			console.log("user's score is ", userCorrectAnswerCount);
+			resetQuiz();
+			// userCorrectAnswerCount = 0;
 			section.prop("hidden", true); // hides previous section
+			$('#intro').prop("hidden", false);
 		
 		} else if (section.find("input:checked").val() === undefined) {
 			console.log("user needs to submit an answer");
@@ -125,7 +124,6 @@ $(document).ready(function () {
 			section.next().prop("hidden", false); // displays next section
 			console.log("button clicked on: ", section);
 			console.log("now viewing section: ", section.next());
-
 		}
 
 		
@@ -156,7 +154,7 @@ $(document).ready(function () {
 	$('#question5').html(createQuestionHTML (questions.question5));
 
 	function finalGameTally () {
-		var awards = ["Design Dreamer", "Future Designer", "Design Intern", "Up and Coming Designer", "Design Brainiac", "Design Genius"];
+		var awards = ["Design Dreamer", "Future Designer", "Design Intern", "Budding Designer", "Design Brainiac", "Design Genius"];
 
 		return 	'<h1>Time To Tally Up Your Answers!</h1>' +
 				'<div class="quizImage"><img src="img/tally.png" width="375px" height="375px" alt="tally"></div>' +
@@ -166,8 +164,15 @@ $(document).ready(function () {
 				'</ul>' +
 		 	    '</div>' +
 		 	    '<h2>You got ' + userCorrectAnswerCount + ' out of 5 correct!</h2>' +
-		 	    '<type="button" class="butt butt-orange" name="reset">Play Again</button>';
+		 	    '<button type="button" class="butt butt-orange" name="reset">Play Again</button>';
 
+	}
+
+	function resetQuiz () {
+		userCorrectAnswerCount = 0;
+		console.log('game has been reset and the users new score is: ', userCorrectAnswerCount);
+		// $.each('.answers').prop('checked', false);
+		
 	}
 
 }); // close 'ready' function
